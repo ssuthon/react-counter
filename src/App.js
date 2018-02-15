@@ -6,7 +6,7 @@ class App extends Component {
     return (
       <div>
         {
-          [1, 2, 3, 4, 5].map(v => <Counter initial={v}/>)
+          [1, 2, 3, 4, 5].map((v,i) => <Counter initial={v} key={i}/>)
         }
       </div>
     );
