@@ -4,11 +4,15 @@ import React, { Component } from 'react';
 class Counter extends Component {
   constructor(props){
     super(props)
-    this.state = {val: props.initial}
+    this.state = {val: props.initial, incBy: 1}
   }
 
   inc(){
-    this.setState({val: this.state.val + parseInt(this.incByInput.value)})
+    this.setState({val: this.state.val + this.state.incBy})
+  }
+  
+  handleChange(event){
+    this.setState({incBy: parseInt(event.target.value)})
   }
 
   render(){
@@ -16,7 +20,7 @@ class Counter extends Component {
       <div>
         {this.state.val} 
         <br/>
-        <input type="number" defaultValue={1} ref={input => this.incByInput = input}/>
+        <input type="number" value={this.state.incBy} onChange={this.handleChange.bind(this)}/>
         <br/>
         <button onClick={this.inc.bind(this)}>Click</button>
       </div>
