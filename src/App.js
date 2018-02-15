@@ -7,6 +7,13 @@ class Counter extends Component {
     this.state = {val: props.initial}
   }
 
+  componentDidMount(){
+    let self = this
+    setInterval(() => {
+      self.setState({val: this.state.val + 1})
+    }, 1000)
+  }
+
   render(){
     return (
       <div>{this.state.val}</div>
