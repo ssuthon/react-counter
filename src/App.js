@@ -5,6 +5,9 @@ class Counter extends Component {
   constructor(props){
     super(props)
     this.state = {val: props.initial, incBy: 1}
+
+    this.inc = this.inc.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
   inc(){
@@ -20,9 +23,9 @@ class Counter extends Component {
       <div>
         {this.state.val} 
         <br/>
-        <input type="number" value={this.state.incBy} onChange={this.handleChange.bind(this)}/>
+        <input type="number" value={this.state.incBy} onChange={this.handleChange}/>
         <br/>
-        <button onClick={this.inc.bind(this)}>Click</button>
+        <button onClick={this.inc}>Click</button>
       </div>
     )
   }
