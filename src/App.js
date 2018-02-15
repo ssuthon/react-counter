@@ -5,7 +5,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Counter initial={4}/>
+        {
+          [1, 2, 3, 4, 5].map(v => <Counter initial={v}/>)
+        }
       </div>
     );
   }
