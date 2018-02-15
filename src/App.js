@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 //functional component
-const Counter = (props) => (
-  <div>{props.val}</div>
+const Counter = ({val}) => (
+  <div>{val}</div>
 )
 class App extends Component {
   render() {
