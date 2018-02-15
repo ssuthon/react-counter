@@ -10,7 +10,11 @@ class Counter extends Component {
   }
 
   inc(){
-    this.setState({val: this.state.val + this.state.incBy})
+    this.setState({val: this.state.val + this.state.incBy}, () => { 
+        if(this.props.onInc){
+            this.props.onInc()
+        }
+    })
   }
   
   handleChange(event){
