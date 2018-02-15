@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 
-//functional component
-const Counter = ({val}) => (
-  <div>{val}</div>
-)
+//react component with state and life cycle
+class Counter extends Component {
+  render(){
+    return (
+      <div>{val}</div>
+    )
+  }
+}
+
 class App extends Component {
   render() {
     return (
