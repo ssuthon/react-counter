@@ -8,12 +8,18 @@ class Counter extends Component {
   }
 
   inc(){
-    this.setState({val: this.state.val + 1})
+    this.setState({val: this.state.val + parseInt(this.incByInput.value)})
   }
 
   render(){
     return (
-      <div>{this.state.val} <button onClick={this.inc.bind(this)}>Click</button></div>
+      <div>
+        {this.state.val} 
+        <br/>
+        <input type="number" defaultValue={1} ref={input => this.incByInput = input}/>
+        <br/>
+        <button onClick={this.inc.bind(this)}>Click</button>
+      </div>
     )
   }
 }
